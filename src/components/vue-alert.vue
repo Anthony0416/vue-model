@@ -1,7 +1,7 @@
 <template>
 	<div id="vue-alert">
 		<div class="alert-box">
-			<p class="alert-title">我是子组件的标题</p>
+			<p class="alert-title">{{msg}}</p>
 		  <slot>
 		    只有在没有内容时才会显示。
 		  </slot>
@@ -15,7 +15,11 @@ export default {
   name: 'vue-alert',
   data () {
     return {
+    	msg: ''
     }
+  },
+  methods: {
+
   }
 }
 

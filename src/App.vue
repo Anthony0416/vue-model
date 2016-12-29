@@ -2,14 +2,23 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
-    <vue-alert></vue-alert>
+    <p @click="vueAlert">这段文字用于触发点击事件</p>
+    <Alert v-show="cont">这里是内容</Alert>
     <div style="height:10000px"></div>
   </div>
 </template>
 
 <script>
+import vue from 'vue'
 import Alert from './components/vue-alert.vue'
-import myButton from './components/my-button.vue'
+import $ from 'jquery'
+
+var app = new vue({
+  el: '#app',
+  data: {
+    cont: true
+  }
+})
 
 export default {
   name: 'app',
@@ -18,7 +27,12 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  components: {Alert,myButton}
+  methods: {
+    vueAlert: function(){
+      alert(app.alert);
+    }
+  },
+  components: {Alert}
 }
 </script>
 
