@@ -49,45 +49,19 @@ npm run dist
 ----------------------------------
 这里以一个简单的button组件为例
 
-<template>
-    <button 
-        :class="['vueButton ' + size]" 
-    >
-        <slot>默认文字</slot>
-    </button>
-</template>
+`<button 
+    :class="['vueButton ' + size]" 
+>
+    <slot>默认文字</slot>
+</button>`
 
 slot用于定义按钮默认文字
 绑定class用于样式修改
 
-<style>
-    .vueButton {
-        border: 1px solid #000;
-        border-radius: 3px;
-        text-align: center;
-        cursor: pointer; 
-    }
-    .big {
-        min-width: 150px;
-        font-size: 16px;
-        padding: 10px 30px;
-    }
-    .middle{
-        min-width: 100px;
-        font-size: 14px;
-        padding: 5px 10px;
-    }
-    .small {
-        min-width: 50px;
-        font-size: 10px;
-        padding: 2px 5px;
-    }
-</style>
-
 这里先简单写了三种样式：big，middle，small
 
 定义参数
-props: {
+`props: {
     size: {
         type: String,
         default: 'middle',
@@ -99,18 +73,18 @@ props: {
             ]
         }
     }
-}
+}`
 这里定义参数为size，类型string，默认值为middle，值为big，middle和small
 
 用法
-引入并注册组件
-import vueButton from './components/vue-button.vue'
+引入并注册组件</br>
+import vueButton from './components/vue-button.vue'</br>
 components: {vueButton}
 
-直接<vueButton></vueButton>即可 组件以默认参数middle和默认文字渲染
+直接`<vueButton></vueButton>`即可 组件以默认参数middle和默认文字渲染
 
 也可加上参数和文字使用
-<vueButton size='big'>确认</vueButton>
+`<vueButton size='big'>`确认`</vueButton>`
 
 
 
