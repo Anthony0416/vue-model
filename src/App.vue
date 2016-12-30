@@ -2,37 +2,32 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
-    <p @click="vueAlert">这段文字用于触发点击事件</p>
-    <Alert v-show="cont">这里是内容</Alert>
+    <!-- <p @click="vueAlert">这段文字用于触发点击事件</p> -->
+    <!-- <Alert v-show="cont">这里是内容</Alert> -->
+    <vueButton size='big'>确认</vueButton>
     <div style="height:10000px"></div>
   </div>
 </template>
 
 <script>
-import vue from 'vue'
-import Alert from './components/vue-alert.vue'
+// import Alert from './components/vue-alert.vue'
 import $ from 'jquery'
-
-var app = new vue({
-  el: '#app',
-  data: {
-    cont: true
-  }
-})
+import vueButton from './components/vue-button.vue'
 
 export default {
   name: 'app',
   data () {
     return {
+      // cont: true,
       msg: 'Welcome to Your Vue.js App'
     }
   },
   methods: {
-    vueAlert: function(){
-      alert(app.alert);
-    }
+    // vueAlert: function(){
+    //   $('body').css("overflow-y","hidden");
+    // }
   },
-  components: {Alert}
+  components: {vueButton}
 }
 </script>
 
